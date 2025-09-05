@@ -3,24 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do List</title>
+    <title>Advanced To-Do List</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
+        <button class="theme-toggle" id="themeToggle">
+            <i class="fas fa-sun"></i>
+        </button>
         <h1>Let's Do It!</h1>
         <p class="subtitle">Organize your tasks and boost your productivity</p>
     </header>
     
     <div class="container">
+        <div class="search-container">
+            <input type="text" class="search-input" id="searchInput" placeholder="Search tasks...">
+            <i class="fas fa-search search-icon"></i>
+        </div>
+        
         <form class="input-form">
             <input type="text" id="taskInput" placeholder="What needs to be done?">
             <button type="button" id="addBtn">+</button>
         </form>
+        
+        <div class="task-options">
+            <select class="priority-select" id="prioritySelect">
+                <option value="low">Low Priority</option>
+                <option value="medium" selected>Medium Priority</option>
+                <option value="high">High Priority</option>
+            </select>
+            <input type="date" class="due-date" id="dueDate">
+        </div>
         
         <div class="filter-buttons">
             <button class="filter-btn active" data-filter="all">All</button>
@@ -41,6 +58,7 @@
             <p>Add a task above to get started</p>
         </div>
     </div>
+
     <script src="app.js"></script>
 </body>
 </html>
